@@ -38,6 +38,7 @@ def send_message(message):
 
 def main():
 
+    message_counter = 0
 # Change your message here
     message='''⠸⢢⡀　　　⠘⡉⠉⢍⠒⢄\n  ⠑⢜⠈⣶⣾⣿⣿⣿⡦⠄⠑⠞⣷⣄\n   ⣴⣿⣿⣿⣿⣿⡏⢠⣶⣦⡀⠈⣿⣦\n ⣾⣿⣿⣿⣿⡿⠟⠁⡏⢿⣿⣷  ⢹⣿⣧\n ⢿⣿⣿⠟⢡⣶⣄  
 ⢃  ⡠⠊  ⣸⣿⣿⣧\n   ⠻⠁    ⠑⡤⠃  ⠁    ⠘⣿⣿⣿⣿\n　　 　 　 ⢀⣑⠼⠤⢤⠊⢀⣾⣿⣿⣿⡇\n　　　　⡔    ⡇  ⡎  ⣿⠿⣫⣿⣿⡇\n　　　　⡇
@@ -53,11 +54,14 @@ def main():
     try:
         while True:
             send_message(message)
-            time.sleep(interval_1)
+            message_counter += 1
+            time.sleep(interval_2)
             send_message(message)
+            message_counter += 1
             time.sleep(interval_2)
     except KeyboardInterrupt:
         print("Stopping the script...")
+        print(f"{message_counter} message(s) sent")
 
 if __name__ == "__main__":
     main()
